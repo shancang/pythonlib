@@ -63,22 +63,3 @@ class GotoDate(object):
 				weekday_range[weekday[index]] = self.after(weekday[1] - self.week())
 
 		return weekday_range
-
-
-
-
-
-
-
-
-
-a='2015-06-11'
-f=GotoDate(datetime.datetime.now().date())
-#f=GotoDate(a)
-if f.is_valid_date():
-	print f.before(3)
-	print f.after(5)
-	print f.week()
-	print f.week_range(china=True)
-	for k,v in f.week_range(china=True).items():
-		print k,v
