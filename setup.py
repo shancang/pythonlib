@@ -32,5 +32,6 @@ setup(name='gotodate',
       packages=['gotodate'],
       license="",
       platforms=['any'],
-      classifiers=[]
+      classifiers=[],
+      install_requires=['python-dateutil']
       )

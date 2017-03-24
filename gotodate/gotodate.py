@@ -2,6 +2,7 @@
 __author__ = "chenshancang@163.com"
 
 import datetime
+from dateutil.relativedelta import relativedelta
 
 
 class GotoDate(object):
@@ -70,3 +71,12 @@ class GotoDate(object):
 
 	def to_format(self,format):
 		return self.get_date().strftime(format)
+
+	def before_months(self,num):
+		num = '-%s' % num
+		return self.get_date() + relativedelta(months=int(num))
+
+
+	def after_months(self,num):
+		num = '+%s' % num
+		return self.get_date() + relativedelta(months=int(num))	
