@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 __author__ = "chenshancang@163.com"
-__version__ = '0.1.0'
 
 from gotodate import GotoDate
 a = '2016-10-11'
