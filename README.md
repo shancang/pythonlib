@@ -10,7 +10,7 @@ Python 2.7.5 (default, Sep 15 2016, 22:37:39)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from gotodate.gotodate  import GotoDate
 >>> a='2015-10-11'
->>> f=GotoDate(a)
+>>> f=GotoDate(date=a)
 >>> f.after(5)
 datetime.date(2015, 10, 16)
 >>> f.before(4)
@@ -21,7 +21,7 @@ datetime.date(2015, 10, 7)
 {'Monday': datetime.date(2015, 10, 5), 'Tuesday': datetime.date(2015, 10, 6), 'Friday': datetime.date(2015, 10, 9), 'Wednesday': datetime.date(2015, 10, 7), 'Thursday': datetime.date(2015, 10, 8), 'Sunday': datetime.date(2015, 10, 11), 'Saturday': datetime.date(2015, 10, 10)}
 >>> 
 >>> import datetime
->>> f=GotoDate(datetime.datetime.now().date())
+>>> f=GotoDate(date=datetime.datetime.now().date())
 >>> f.after(5)
 datetime.date(2017, 3, 28)
 >>> 

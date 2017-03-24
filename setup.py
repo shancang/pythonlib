@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
- 
- 
 from __future__ import with_statement
  
 import sys
@@ -30,7 +28,7 @@ setup(name='gotodate',
       author_email='chenshancang@163.com',
       maintainer='Shancang Chen',
       maintainer_email='chenshancang@163.com',
-      url='https://github.com/shancang/pythonlib',
+      url='https://github.com/shancang/pythonlib.git',
       packages=['gotodate'],
       license="",
       platforms=['any'],

@@ -6,14 +6,15 @@ import datetime
 
 
 class GotoDate(object):
-	def __init__(self,date):
+	def __init__(self,date=datetime.datetime.now().date(),format='%Y-%m-%d'):
 		self.date = date
+		self.src_format = format
 
 	def is_valid_date(self):
 		#判断日期有效性
 		if isinstance(self.date,basestring):
 			try:
-				datetime.datetime.strptime(self.date,'%Y-%m-%d')
+				datetime.datetime.strptime(self.date,self.src_format)
 			except Exception:
 				return False
 			return True
@@ -23,8 +24,11 @@ class GotoDate(object):
 		#字符串转行成日期类型
 		if self.is_valid_date():
 			if isinstance(self.date,basestring):
-				return datetime.datetime.strptime(self.date,'%Y-%m-%d').date()
+				return datetime.datetime.strptime(self.date,self.src_format).date()
 			return self.date
+
+	def get_date(self):
+		return self._clean_date()
 
 	def before(self,num):
 		#输出几天前
@@ -64,3 +68,6 @@ class GotoDate(object):
 				weekday_range[weekday[index]] = self.after(weekday[1] - self.week())
 
 		return weekday_range
+
+	def to_format(self,format):
+		return self.get_date().strftime(format)
